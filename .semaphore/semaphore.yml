@@ -31,7 +31,7 @@ blocks:
             - checkout
 
             # Set version of Go:
-            - sem-version go 1.12.1
+            - sem-version go 1.12
 
             # Build the client
             - go tools/build_win.go
