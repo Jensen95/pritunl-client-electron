@@ -75,8 +75,6 @@ func main() {
 		panic(err)
 	}
 
-	fmt.Println(filepath.Join("..", "service"))
-
 	cmd = exec.Command("go", "get", "-u", "-f")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
