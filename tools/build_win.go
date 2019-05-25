@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -73,6 +74,9 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
+	fmt.Println(filepath.Join("..", "service"))
+	fmt.Println(filepath.Join("..", "service"))
 
 	cmd = exec.Command("go", "get", "-u", "-f")
 	cmd.Stdout = os.Stdout
