@@ -76,7 +76,8 @@ func main() {
 	}
 
 	fmt.Println(filepath.Join("..", "service"))
-	fmt.Println(filepath.Join("..", "service"))
+	fmt.Println(filepath.Rel("..", "service"))
+	fmt.Println(filepath.Base())
 
 	cmd = exec.Command("go", "get", "-u", "-f")
 	cmd.Stdout = os.Stdout
