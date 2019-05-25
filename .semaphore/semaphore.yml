@@ -34,7 +34,7 @@ blocks:
             - sem-version go 1.12
 
             # Build the client
-            - go tools/build_win.go
+            - tools/build_win.go
 
             # Store the binary in cache to reuse in further blocks.
             # More about caching: https://docs.semaphoreci.com/article/54-toolbox-reference#cache
