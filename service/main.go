@@ -1,8 +1,6 @@
 package main
 
 import (
-	"context"
-	"flag"
 	"github.com/Sirupsen/logrus"
 	"github.com/gin-gonic/gin"
 	"github.com/Jensen95/pritunl-client-electron/service/auth"
@@ -13,6 +11,8 @@ import (
 	"github.com/Jensen95/pritunl-client-electron/service/profile"
 	"github.com/Jensen95/pritunl-client-electron/service/utils"
 	"github.com/Jensen95/pritunl-client-electron/service/watch"
+	"context"
+	"flag"
 	"net/http"
 	"os"
 	"os/signal"
