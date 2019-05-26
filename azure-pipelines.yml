@@ -1,4 +1,3 @@
-# Go
 # Build your Go project.
 # Add steps that test, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/go
@@ -17,9 +16,9 @@ variables:
 
 steps:
 - script: |
-    mkdir -p '$(GOBIN)'
-    mkdir -p '$(GOPATH)/pkg'
-    mkdir -p '$(modulePath)'
+    mkdir -p '$Env:GOBIN'
+    mkdir -p '$Env:GOPATH/pkg'
+    mkdir -p '$Env:modulePath'
     shopt -s extglob
     shopt -s dotglob
     mv !(gopath) '$(modulePath)'
