@@ -1,0 +1,22 @@
+# Build your Go project.
+# Add steps that test, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/go
+
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-2019'
+
+variables:
+  GOBIN:  $(GOPATH)/bin' # Go binaries path
+  GOPATH: '$(system.defaultWorkingDirectory)/gopath' # Go workspace path
+
+steps:
+
+- script: |
+    ls
+    go version
+    go run build_win.go
+  workingDirectory: $(system.defaultWorkingDirectory)/tools
+  displayName: 'Get dependencies, then build'

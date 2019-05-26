@@ -9,15 +9,7 @@ import (
 const signtool = "C:\\Program Files (x86)\\Windows Kits\\10\\bin\\10.0.17763.0\\x64\\signtool.exe"
 
 func main() {
-	cmd := exec.Command("git", "pull")
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-	err := cmd.Run()
-	if err != nil {
-		panic(err)
-	}
-
-	err = os.Remove(filepath.Join("openvpn_win",
+	err := os.Remove(filepath.Join("openvpn_win",
 		"openvpn-install-2.4.6-I602.exe"))
 	if err != nil && !os.IsNotExist(err) {
 		panic(err)
@@ -44,7 +36,7 @@ func main() {
 		panic(err)
 	}
 
-	cmd = exec.Command("go", "build", "-v", "-o", "tuntap.exe")
+	cmd := exec.Command("go", "build", "-v", "-o", "tuntap.exe")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	err = cmd.Run()
