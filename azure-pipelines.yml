@@ -11,12 +11,10 @@ pool:
 variables:
   GOBIN:  $(GOPATH)/bin' # Go binaries path
   GOPATH: '$(system.defaultWorkingDirectory)/gopath' # Go workspace path
-  modulePath: '$(GOPATH)/src/github.com/$(build.repository.name)' # Path to the module's code
 
 steps:
 
 - script: |
     go version
     go run build_win.go -v .
-  workingDirectory: $(modulePath)/tools
   displayName: 'Get dependencies, then build'
