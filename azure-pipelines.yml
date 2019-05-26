@@ -17,6 +17,6 @@ steps:
 - script: |
     ls
     go version
-    go run build_win.go -v
+    go run build_win.go
   workingDirectory: $(system.defaultWorkingDirectory)/tools
   displayName: 'Get dependencies, then build'
